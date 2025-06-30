@@ -1,0 +1,38 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.so
+
+# Poetry virtual environment (if stored locally)
+.venv/
+
+# VS Code
+.vscode/
+
+# Environment files
+.env
+.env.*
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# Pytest
+.cache/
+htmlcov/
+
+# Logs and local databases
+*.log
+*.sqlite
+*.db
+*.h5
+*.pth
+*.pt
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Application-specific
+*.zip
+*.tar.gz
+*.csv.gz
