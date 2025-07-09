@@ -1,0 +1,51 @@
+\begin{thebibliography}{5}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Alexiou and Mathioudakis(2005)]{alexiou_development_2005}
+A.~Alexiou and K.~Mathioudakis.
+\newblock Development of {Gas} {Turbine} {Performance} {Models} {Using} a {Generic} {Simulation} {Tool}.
+\newblock In \emph{Volume 1: {Turbo} {Expo} 2005}, Reno, Nevada, USA, Jan. 2005. ASMEDC.
+\newblock \doi{10.1115/gt2005-68678}.
+\newblock URL \url{https://asmedigitalcollection.asme.org/GT/proceedings/GT2005/46997/185/363560}.
+
+\bibitem[Mathioudakis et~al.(2001)Mathioudakis, Stamatis, Tsalavoutas, and Aretakis]{mathioudakis_performance_2001}
+K.~Mathioudakis, A.~Stamatis, A.~Tsalavoutas, and N.~Aretakis.
+\newblock Performance analysis of industrial gas turbines for engine condition monitoring.
+\newblock \emph{Proceedings of the Institution of Mechanical Engineers, Part A: Journal of Power and Energy}, 215\penalty0 (2):\penalty0 173--184, Jan. 2001.
+\newblock ISSN 0957-6509, 2041-2967.
+\newblock \doi{10.1243/0957650011538442}.
+\newblock URL \url{https://journals.sagepub.com/doi/10.1243/0957650011538442}.
+\newblock Publisher: SAGE Publications.
+
+\bibitem[Mathioudakis et~al.(2024)Mathioudakis, Alexiou, Aretakis, and Romesis]{mathioudakis_signatures_2024}
+K.~Mathioudakis, A.~Alexiou, N.~Aretakis, and C.~Romesis.
+\newblock Signatures of {Compressor} and {Turbine} {Faults} in {Gas} {Turbine} {Performance} {Diagnostics}: {A} {Review}.
+\newblock \emph{Energies}, 17\penalty0 (14):\penalty0 3409, July 2024.
+\newblock ISSN 1996-1073.
+\newblock \doi{10.3390/en17143409}.
+\newblock URL \url{https://www.mdpi.com/1996-1073/17/14/3409}.
+\newblock Publisher: MDPI AG.
+
+\bibitem[Romesis et~al.(2024)Romesis, Aretakis, and Mathioudakis]{romesis_model-assisted_2024}
+C.~Romesis, N.~Aretakis, and K.~Mathioudakis.
+\newblock Model-{Assisted} {Probabilistic} {Neural} {Networks} for {Effective} {Turbofan} {Fault} {Diagnosis}.
+\newblock \emph{Aerospace}, 11\penalty0 (11):\penalty0 913, Nov. 2024.
+\newblock ISSN 2226-4310.
+\newblock \doi{10.3390/aerospace11110913}.
+\newblock URL \url{https://www.mdpi.com/2226-4310/11/11/913}.
+\newblock Publisher: MDPI AG.
+
+\bibitem[Urban(1973)]{urban_gas_1973}
+L.~A. Urban.
+\newblock Gas {Path} {Analysis} {Applied} to {Turbine} {Engine} {Condition} {Monitoring}.
+\newblock \emph{Journal of Aircraft}, 10\penalty0 (7):\penalty0 400--406, July 1973.
+\newblock ISSN 0021-8669, 1533-3868.
+\newblock \doi{10.2514/3.60240}.
+\newblock URL \url{https://arc.aiaa.org/doi/10.2514/3.60240}.
+\newblock Publisher: American Institute of Aeronautics and Astronautics (AIAA).
+
+\end{thebibliography}

@@ -1,0 +1,38 @@
+\begin{thebibliography}{6}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Grosz and Kraus(1996)]{grosz1996collaborative}
+B.~J. Grosz and S.~Kraus.
+\newblock Collaborative plans for complex group action.
+\newblock \emph{Artificial Intelligence}, 86\penalty0 (2):\penalty0 269--357, 1996.
+
+\bibitem[Kautz and Selman(1992)]{kautz1992planning}
+H.~A. Kautz and B.~Selman.
+\newblock Planning as satisfiability.
+\newblock In \emph{Proceedings of the 10th European Conference on Artificial Intelligence (ECAI)}, pages 359--363, 1992.
+
+\bibitem[Pearl(2009)]{pearl2009causality}
+J.~Pearl.
+\newblock \emph{Causality}.
+\newblock Cambridge University Press, 2009.
+
+\bibitem[Perelman(2002)]{perelman2002entropy}
+G.~Perelman.
+\newblock The entropy formula for the {R}icci flow and its geometric applications.
+\newblock Preprint arXiv:math/0211159, 2002.
+
+\bibitem[Rumelhart et~al.(1986)Rumelhart, Hinton, and Williams]{rumelhart1986learning}
+D.~E. Rumelhart, G.~E. Hinton, and R.~J. Williams.
+\newblock Learning representations by back-propagating errors.
+\newblock \emph{Nature}, 323\penalty0 (6088):\penalty0 533--536, 1986.
+
+\bibitem[Turing(1950)]{turing1950computing}
+A.~M. Turing.
+\newblock Computing machinery and intelligence.
+\newblock \emph{Mind}, LIX\penalty0 (236):\penalty0 433--460, 1950.
+
+\end{thebibliography}
