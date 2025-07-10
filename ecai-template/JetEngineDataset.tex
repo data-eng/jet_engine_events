@@ -100,73 +100,62 @@ challenging real-world applications.
 
 \section{Dataset Description}
 
-Jet engines play a vital role in modern aviation, 
-making the assurance of their operational safety and reliability a top priority.
-The challenging high-speed, high-temperature, and high-pressure environments
-in which these engines operate can compromise their integrity, 
-leading to potential malfunctions or degraded performance of their components
-during flight. These faults directly impact aerothermodynamic measurements 
-such as pressures, temperatures, and shaft speeds, which are essential for 
-condition monitoring \citep{mathioudakis_signatures_2024}. Detecting faults from time-series data in-flight 
-remains a complex challenge for the research community due to limitations
-in available instrumentation \citep{urban_gas_1973}, the similarity of fault effects, 
-the possibility of multiple concurrent faults, and the influence of prior 
-events on the development of later faults events.
+Jet engines play a vital role in aviation, and ensuring their safety and reliability is paramount. The harsh environments they operate in can cause malfunctions, impacting aerothermodynamic measurements. Detecting faults in-flight from time-series data remains challenging due to limited instrumentation, similar fault effects, concurrent faults, and prior events. This paper introduces a dataset of simulated time-series measurements from a turbofan engine, including various common faults, to aid in developing fault detection strategies. This dataset is valuable for the Machine Learning community, presenting a complex engineering problem with unique features. It includes 2{,}410 time series, each with 3{,}600 time steps, where faults are introduced, and measurements are taken at every step. Some faults have nearly indistinguishable effects, posing challenges for differentiation, while others exhibit long-term dependencies. These attributes make the dataset suitable for research in sequential and time-stepwise classification and investigating long-term dependencies. The dataset comprises time series measurements from a low bypass ratio turbofan engine, typical of modern civil aviation engines, generated using an Engine Performance Model.
 
-In this paper, we present a dataset comprising simulated time-series 
-measurements from a typical turbofan engine during flight. 
-This dataset includes instances where one or more of three common 
-faults—namely increased tip clearance (TIP), variable guide vane (VGV) 
-mistuning, and foreign object damage (FOD)—occur. This dataset aims to 
-facilitate the development and evaluation of fault detection strategies 
-in aviation engine condition monitoring.
+% Jet engines play a vital role in modern aviation, 
+% making the assurance of their operational safety and reliability a top priority.
+% The challenging high-speed, high-temperature, and high-pressure environments
+% in which these engines operate can compromise their integrity, 
+% leading to potential malfunctions or degraded performance of their components
+% during flight. These faults directly impact aerothermodynamic measurements 
+% such as pressures, temperatures, and shaft speeds, which are essential for 
+% condition monitoring \citep{mathioudakis_signatures_2024}. Detecting faults from time-series data in-flight 
+% remains a complex challenge for the research community due to limitations
+% in available instrumentation \citep{urban_gas_1973}, the similarity of fault effects, 
+% the possibility of multiple concurrent faults, and the influence of prior 
+% events on the development of later faults events.
 
-This dataset presents a valuable resource for the Machine Learning community
-due to its embodiment of a complex engineering problem, characterized by 
-several distinctive features. It comprises 2,410 time series, each with 
-3,600 time steps. Within each series, one or more faults from a set of 
-three are introduced, with measurements and fault labels available at every 
-time step. Notably, some fault instances induce effects on the measurements 
-that are nearly indistinguishable, posing significant challenges for fault 
-differentiation. Additionally, certain faults exhibit long-term dependencies 
-on preceding faults, serving as critical clues for accurate identification 
-despite similar measurement effects. These attributes render the dataset 
-highly suitable for advancing research in sequential and time-stepwise 
-classification, as well as for investigating long-term dependencies within 
-time-series data.
+% In this paper, we present a dataset comprising simulated time-series 
+% measurements from a typical turbofan engine during flight. 
+% This dataset includes instances where one or more of three common 
+% faults—namely increased tip clearance (TIP), variable guide vane (VGV) 
+% mistuning, and foreign object damage (FOD)—occur. This dataset aims to 
+% facilitate the development and evaluation of fault detection strategies 
+% in aviation engine condition monitoring.
+
+% This dataset presents a valuable resource for the Machine Learning community
+% due to its embodiment of a complex engineering problem, characterized by 
+% several distinctive features. It comprises 2,410 time series, each with 
+% 3,600 time steps. Within each series, one or more faults from a set of 
+% three are introduced, with measurements and fault labels available at every 
+% time step. Notably, some fault instances induce effects on the measurements 
+% that are nearly indistinguishable, posing significant challenges for fault 
+% differentiation. Additionally, certain faults exhibit long-term dependencies 
+% on preceding faults, serving as critical clues for accurate identification 
+% despite similar measurement effects. These attributes render the dataset 
+% highly suitable for advancing research in sequential and time-stepwise 
+% classification, as well as for investigating long-term dependencies within 
+% time-series data.
+
+% The dataset comprises a time series of measurements collected from a 
+% low bypass ratio turbofan engine, which is representative of 
+% contemporary in-service civil aviation engines. The dataset was 
+% generated using an Engine Performance Model (EPM) that simulates the 
+% engine's operational behavior.
+
+The dataset is available in: https://doi.org/10.5281/zenodo.15856441
 
 
-The dataset comprises a time series of measurements collected from a 
-low bypass ratio turbofan engine, which is representative of 
-contemporary in-service civil aviation engines. The dataset was 
-generated using an Engine Performance Model (EPM) that simulates the 
-engine's operational behavior.
+\subsection{Engine PErformance Model}
 
-
-\subsection{Dataset Description}
-
-An EPM interrelates parameters that represent engine component health and operating
-conditions with measurements performed on an engine \citep{alexiou_development_2005},
-and can be expressed through Equation~(\ref{eq:epm}):
+An EPM interrelates parameters that represent engine component health and operating conditions with measurements performed on an engine \citep{alexiou_development_2005}, and can be expressed through Equation~(\ref{eq:epm}):
 
 \begin{eqnarray}\label{eq:epm}
 \mathbf{Y} = \mathbf{g}(\mathbf{u}, \mathbf{f})
 \end{eqnarray}
 
 where $\mathbf{g}$ is a vector function representing the EPM, $\mathbf{u}$ is a vector of measured 
-quantities defining the engine's operating point, $\mathbf{Y}$ is a set of measurements 
-for condition monitoring, and $\mathbf{f}$ is a vector of engine component 
-\textit{health parameters}. Typically, two health parameters are used for each 
-component: the flow factor (SW), indicating the component's swallowing capacity,
- and the efficiency factor (SE), representing thermal efficiency. 
- The application of such parameters for assessing engine component health has 
- been discussed in \citep{mathioudakis_performance_2001}. A deviation of a health parameter from its nominal value 
- signals a fault in that component. As extensively discussed in \citep{mathioudakis_signatures_2024}   
- the ratio of deviations between two health parameters can serve as a 
- characteristic metric for faults such as fouling, increased tip clearance, 
- erosion, and foreign object damage. The severity of the 
- fault correlates with the level of this deviation. The deviation (or \textit{delta}) 
- of a health parameter $\mathbf{\Delta f}$ is defined as:
+quantities defining the engine's operating point, $\mathbf{Y}$ is a set of measurements for condition monitoring, and $\mathbf{f}$ is a vector of engine component \textit{health parameters}. Typically, two health parameters are used for each component: the flow factor (SW), indicating the component's swallowing capacity,and the efficiency factor (SE), representing thermal efficiency. The application of such parameters for assessing engine component health has been discussed in \citep{mathioudakis_performance_2001}. A deviation of a health parameter from its nominal value signals a fault in that component. As extensively discussed in \citep{mathioudakis_signatures_2024} the ratio of deviations between two health parameters can serve as a characteristic metric for faults such as fouling, increased tip clearance, erosion, and foreign object damage. The severity of the fault correlates with the level of this deviation. The deviation (or \textit{delta}) of a health parameter $\mathbf{\Delta f}$ is defined as:
 
 \begin{eqnarray}\label{eq:deltaf}
     \mathbf{\Delta f}\ (\%) = \frac{\mathbf{f} - \mathbf{f_o}}{\mathbf{f_o}} \cdot 100\%
@@ -175,8 +164,7 @@ component: the flow factor (SW), indicating the component's swallowing capacity,
 where $\mathbf{f}$ denotes the value of the health parameter, and $\mathbf{f_o}$ its nominal value.
 
 Using the EPM, the nominal values of the available measurement set, denoted as $\mathbf{Y_o}$, 
-can be computed for a specified operating point $\mathbf{u}$. These values correspond to the nominal
-health parameters, $\mathbf{f_o}$, and are derived via the following relation:
+can be computed for a specified operating point $\mathbf{u}$. These values correspond to the nominal health parameters, $\mathbf{f_o}$, and are derived via the following relation:
 
 \begin{eqnarray}\label{eq:epmnom}
 \mathbf{Y_o} = \mathbf{g}(\mathbf{u}, \mathbf{f_o})
@@ -189,40 +177,25 @@ from its nominal value $\mathbf{Y_o}$ is defined as:
     \mathbf{\Delta Y}\ (\%) = \frac{\mathbf{Y} - \mathbf{Y_o}}{\mathbf{Y_o}} \cdot 100\%
 \end{eqnarray}
 
-
-
 To emulate realistic measurement conditions, random noise is superimposed on the measurement 
 deviations. The noise levels considered are consistent with those typical of this instrumentation, 
 as documented in \citep{romesis_model-assisted_2024}.
 
 \subsection{Dataset Generation}
-The EPM used for dataset generation was developed in the MATLAB environment, following the approach 
-described in \citep{alexiou_development_2005}. At each time step, the data includes a labeled vector
-of measurement deltas produced by the EPM at a specified operating point (input vector $\mathbf{u}$) and a 
-specific engine health condition (input vector $\mathbf{\Delta f}$).
 
-A total of 10 operating points were considered, covering a broad range of the engine’s flight envelope.
-Throughout a time series, all time steps correspond to the same operating point.
+The EPM used for dataset generation was developed in MATLAB. At each time step, the data includes a labeled vector of measurement deltas produced by the EPM at a specified operating point and a specific engine health condition. A total of 10 operating points were considered, covering a broad range of the engine’s flight envelope. Throughout a time series, all time steps correspond to the same operating point. Additionally, five distinct health conditions were considered, as summarized in Table~\ref{tab:health_conditions}. The first health condition represents the nominal, healthy operation of the engine. The second health condition (coded as TIP) models an increased clearance of the compressor blades. As reported in \citep{mathioudakis_signatures_2024}, this fault results in a ratio of the related health parameter deviations, $\Delta SW/\Delta SE$, of $0.2$; the actual deviations of $\Delta SW$ and $\Delta SE$ are around $-1\%$ and $-5\%$, respectively. The remaining three conditions involve a mistuning of the inlet guide vanes of the compressor, damage caused by foreign objects within the compressor, and the concurrent occurrence of VGV and FOD faults. These conditions result in a ratio of $-3$, $1$, and $0.2$, respectively. In all cases, deviations within the range of $0.7$ to $1.3$ times the aforementioned values are considered, simulating faults of varying severity. Notably, the effects of TIP faults and the combined VGV+FOD faults on the compressor’s health parameters are the same, and therefore, measurements under these conditions follow the same distribution. Each dataset record is labeled according to the specific health condition present at that time step.
 
-Additionally, five distinct health conditions were considered, as summarized in Table~\ref{tab:health_conditions}.
-The first health condition represents the nominal, healthy operation of the engine, with no deviations in health 
-parameters across any components. The second health condition (coded as TIP) models an increased clearance of the 
-compressor blades. As reported in \citep{mathioudakis_signatures_2024}, this fault results in a ratio of the 
-related health parameter deviations, $\Delta SW/\Delta SE$, of $0.2$; the actual deviations of $\Delta SW$ 
-and $\Delta SE$ are around $-1\%$ and $-5\%$, respectively. 
-The third health condition pertains to mistuning of the inlet guide vanes (VGV) of the compressor, 
-analogous to the TIP fault. In these instances, deviations in the compressor’s health parameters $\Delta SW$ 
-and $\Delta SE$ are typically around $+3\%$ to $-1\%$, respectively, resulting in a ratio of $-3$.
-The fourth health condition involves damage caused by foreign objects (FOD) within the compressor. 
-In such cases, deviations in both health parameters are generally around $-4\%$, yielding a ratio of $1$.
-The fifth health condition represents the concurrent occurrence of VGV and FOD faults (denoted as VGV+FOD).
-The combined effect in this scenario is additive, with deviations around $+1\%$ and $-5\%$,
-respectively, leading to a ratio of $0.2$. 
-In all cases, deviations within the range of 0.7 to 1.3 times the aforementioned values are considered, simulating faults of varying severity. 
 
-Notably, the effects of TIP faults and the combined VGV+FOD faults on the compressor’s health parameters
-are the same, and therefore, measurements under these conditions follow the same distribution.
-Each dataset record is labeled according to the specific health condition present at that time step.
+% The EPM used for dataset generation was developed in the MATLAB environment, following the approach described in \citep{alexiou_development_2005}. At each time step, the data includes a labeled vector of measurement deltas produced by the EPM at a specified operating point (input vector $\mathbf{u}$) and a specific engine health condition (input vector $\mathbf{\Delta f}$).
+
+% A total of 10 operating points were considered, covering a broad range of the engine’s flight envelope. Throughout a time series, all time steps correspond to the same operating point.
+
+% Additionally, five distinct health conditions were considered, as summarized in Table~\ref{tab:health_conditions}. The first health condition represents the nominal, healthy operation of the engine, with no deviations in health 
+% parameters across any components. The second health condition (coded as TIP) models an increased clearance of the compressor blades. As reported in \citep{mathioudakis_signatures_2024}, this fault results in a ratio of the 
+% related health parameter deviations, $\Delta SW/\Delta SE$, of $0.2$; the actual deviations of $\Delta SW$ and $\Delta SE$ are around $-1\%$ and $-5\%$, respectively. The remaining three conditions involve a mistuning of the inlet guide vanes (VGV) of the compressor, damage caused by foreign objects (FOD) within the compressor, and the concurrent occurrence of VGV and FOD faults (denoted as VGV+FOD). These conditions result in a ratio of $-3$, $1$, and $0.2$, respectively. 
+% In all cases, deviations within the range of 0.7 to 1.3 times the aforementioned values are considered, simulating faults of varying severity. 
+
+% Notably, the effects of TIP faults and the combined VGV+FOD faults on the compressor’s health parameters are the same, and therefore, measurements under these conditions follow the same distribution. Each dataset record is labeled according to the specific health condition present at that time step.
 
 \begin{table}[h]
 \caption{Considered health conditions.}
@@ -241,55 +214,44 @@ label &  health condition & $\Delta SE$ & $\Delta SE$ & $\Delta SW/\Delta SE$ \\
 \end{tabular}
 \end{table}
 
+Each time series comprises 3{,}600 time steps. During this period, various health conditions may develop. A time series without any fault contains measurements indicative of healthy engine operation at all time steps. In other time series, the engine operates fault-free initially, but at a certain point, a TIP, VGV, or FOD fault occurs and persists until the end of the series. In some other time series, the engine also operates fault-free initially, but at a certain point, a brief period occurs during which a VGV fault is present. The engine then continues to operate without faults until a later time step, when a combined VGV+FOD fault manifests and persists for the remainder of the time series. This scenario exemplifies a specific fault condition characterized by a severe VGV fault leading to FOD. The damage is attributed to the detachment of a particle from the VGV mechanism, such as a loosened bolt, which is subsequently ingested by the engine. The failure of the VGV mechanism may be preceded by a transient VGV fault event, serving as an early indicator of the impending failure. This scenario was selected because both the TIP and VGV+FOD faults exert similar impacts on engine performance. The key differentiator between the TIP fault and the VGV+FOD fault is the long-term dependency of the latter on the initial, instantaneous VGV fault.
 
-Each time series comprises 3{,}600 time steps, representing measurements acquired from the engine
-at a frequency of 1~Hz during one hour of flight at a specific operating point. During this period,
-various health conditions may develop.
+% Each time series comprises 3{,}600 time steps, representing measurements acquired from the engine at a frequency of 1~Hz during one hour of flight at a specific operating point. During this period, various health conditions may develop.
 
-A time series without any fault contains measurements indicative of healthy engine operation
-at all time steps (labeled $1$). In some time series, the engine operates fault-free initially
-(time steps labeled $1$), but at a certain point, a TIP fault occurs and persists until the end
-of the series (time steps labeled $2$). Similarly, there are series where the engine functions
-without faults initially (time steps $1$), but subsequently a VGV or FOD fault occurs, 
-remaining until the series concludes (time steps labeled $3$ or $4$, respectively).
-In some other time series, the engine also operates fault-free initially (time steps labeled $1$),
-but at a certain point, a brief period (approximately 10 time steps) occurs during which a VGV fault is
-present. The engine then continues to operate without faults until a later time step, when a combined
-VGV+FOD fault manifests and persists for the remainder of the time series.
-This scenario exemplifies a specific fault condition characterized by a severe VGV fault leading to FOD.
-The damage is attributed to the detachment of a particle from the VGV mechanism, such as a loosened bolt, which is
-subsequently ingested by the engine. The failure of the VGV mechanism may be preceded by a transient VGV
-fault event, serving as an early indicator of the impending failure.
-This scenario was selected because both the TIP and VGV+FOD faults exert similar impacts on engine performance. The key differentiator between the TIP fault and the VGV+FOD fault is the long-term dependency of the latter on the initial, instantaneous VGV fault.
+% A time series without any fault contains measurements indicative of healthy engine operation at all time steps (labeled $1$). In other time series, the engine operates fault-free initially (time steps labeled $1$), but at a certain point, a TIP, VGV, or FOD fault occurs and persists until the end of the series (time steps labeled $2$, $3$, or $4$, respectively). In some other time series, the engine also operates fault-free initially (time steps labeled $1$),
+% but at a certain point, a brief period (approximately 10 time steps) occurs during which a VGV fault is present. The engine then continues to operate without faults until a later time step, when a combined VGV+FOD fault manifests and persists for the remainder of the time series. This scenario exemplifies a specific fault condition characterized by a severe VGV fault leading to FOD.
+% The damage is attributed to the detachment of a particle from the VGV mechanism, such as a loosened bolt, which is subsequently ingested by the engine. The failure of the VGV mechanism may be preceded by a transient VGV fault event, serving as an early indicator of the impending failure. This scenario was selected because both the TIP and VGV+FOD faults exert similar impacts on engine performance. The key differentiator between the TIP fault and the VGV+FOD fault is the long-term dependency of the latter on the initial, instantaneous VGV fault.
 
 
 
 \section{Concluding Remarks and Next Steps}
 
-The dataset is currently employed to evaluate the classification
-capabilities of various sequential machine learning methods applied to
-time-series data characterized by long-term dependencies. Although
-this is an ongoing study, preliminary results suggest that the dataset
-presents a challenging use case that tests the limits of current
-state-of-the-art techniques. Figure~\ref{fig:results} illustrates an
-example of these results, where four classification methods trained on
-the dataset are tested on a time-series segment containing a VGV+FOD
-fault. The methods include an RNN, a GRU, and an LSTM, along with an
-MLP trained for point-to-point classification for comparison. At each
-time step, the actual health condition is depicted in blue, while the
-estimated condition is shown in red. The results indicate that all
-methods fail to detect the VGV+FOD fault, which occurs around time
-step 3200, although a sudden event—a VGV fault at approximately time
-step 740 that serves as a precursor to the VGV+FOD fault —is detected
-by all methods. Thus far, sequential methods have shown limited
-ability to leverage information from prior time steps, performing
-similarly to the point-wise MLP.
+The dataset is used to evaluate the classification capabilities of sequential machine learning methods on time-series data with long-term dependencies. Preliminary results suggest the dataset challenges current techniques. For example, Figure~ref{fig:results} shows four classification methods trained on the dataset and tested on a time-series segment containing a VGV+FOD fault. The methods, include an RNN, a GRU, and an LSTM, together with an MLP, trained for point-to-point classification for comparison. All methods failed to detect the VGV+FOD fault, though they detected a precursor VGV fault at time step 740. Sequential methods have shown limited ability to use information from prior time steps, performing similarly to the point-wise MLP.
+
+% The dataset is currently employed to evaluate the classification
+% capabilities of various sequential machine learning methods applied to
+% time-series data characterized by long-term dependencies. Although
+% this is an ongoing study, preliminary results suggest that the dataset
+% presents a challenging use case that tests the limits of current
+% state-of-the-art techniques. Figure~\ref{fig:results} illustrates an
+% example of these results, where four classification methods trained on
+% the dataset are tested on a time-series segment containing a VGV+FOD
+% fault. The methods include an RNN, a GRU, and an LSTM, along with an
+% MLP trained for point-to-point classification for comparison. At each
+% time step, the actual health condition is depicted in blue, while the
+% estimated condition is shown in red. The results indicate that all
+% methods fail to detect the VGV+FOD fault, which occurs around time
+% step 3200, although a sudden event—a VGV fault at approximately time
+% step 740 that serves as a precursor to the VGV+FOD fault —is detected
+% by all methods. Thus far, sequential methods have shown limited
+% ability to leverage information from prior time steps, performing
+% similarly to the point-wise MLP.
 
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=8.5cm]{comparison_eval_tsid_8_mod}
-  \caption{Development of health conditions during a time-series of the dataset.}
+  \includegraphics[width=8.5cm]{comparison_eval_tsid_8_demo}
+  \caption{Health conditions detection during a time-series of the dataset.}
   \label{fig:results}
 \end{figure}
 

@@ -12,6 +12,12 @@ A.~Alexiou and K.~Mathioudakis.
 \newblock \doi{10.1115/gt2005-68678}.
 \newblock URL \url{https://asmedigitalcollection.asme.org/GT/proceedings/GT2005/46997/185/363560}.
 
+\bibitem[Godahewa et~al.(2021)Godahewa, Bergmeir, Webb, Hyndman, and Montero-Manso]{godahewa-etal-2021}
+R.~W. Godahewa, C.~Bergmeir, G.~I. Webb, R.~Hyndman, and P.~Montero-Manso.
+\newblock Monash time series forecasting archive.
+\newblock In \emph{Thirty-fifth Conference on {N}eural {I}nformation {P}rocessing {S}ystems Datasets and Benchmarks Track (Round 2)}, 2021.
+\newblock URL \url{https://openreview.net/forum?id=wEc1mgAjU-}.
+
 \bibitem[Mathioudakis et~al.(2001)Mathioudakis, Stamatis, Tsalavoutas, and Aretakis]{mathioudakis_performance_2001}
 K.~Mathioudakis, A.~Stamatis, A.~Tsalavoutas, and N.~Aretakis.
 \newblock Performance analysis of industrial gas turbines for engine condition monitoring.
@@ -38,14 +44,5 @@ C.~Romesis, N.~Aretakis, and K.~Mathioudakis.
 \newblock \doi{10.3390/aerospace11110913}.
 \newblock URL \url{https://www.mdpi.com/2226-4310/11/11/913}.
 \newblock Publisher: MDPI AG.
-
-\bibitem[Urban(1973)]{urban_gas_1973}
-L.~A. Urban.
-\newblock Gas {Path} {Analysis} {Applied} to {Turbine} {Engine} {Condition} {Monitoring}.
-\newblock \emph{Journal of Aircraft}, 10\penalty0 (7):\penalty0 400--406, July 1973.
-\newblock ISSN 0021-8669, 1533-3868.
-\newblock \doi{10.2514/3.60240}.
-\newblock URL \url{https://arc.aiaa.org/doi/10.2514/3.60240}.
-\newblock Publisher: American Institute of Aeronautics and Astronautics (AIAA).
 
 \end{thebibliography}
