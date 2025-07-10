@@ -1,14 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%% LaTeX Template for ECAI Papers 
-%%% Prepared by Ulle Endriss (version 1.0 of 2023-12-10)
-
-%%% To be used with the ECAI class file ecai.cls.
-%%% You also will need a bibliography file (such as mybibfile.bib).
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%% Start your document with the \documentclass{} command.
 %%% Use the first variant for the camera-ready paper.
 %%% Use the second variant for submission (for double-blind reviewing).
 
@@ -29,27 +18,6 @@
 \usepackage{color}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%% Define any theorem-like environments you require here.
-
-\newtheorem{theorem}{Theorem}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{fact}[theorem]{Fact}
-\newtheorem{definition}{Definition}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%% Define any new commands you require here.
-
-\newcommand{\BibTeX}{B\kern-.05em{\sc i\kern-.025em b}\kern-.08em\TeX}
-
-% \def\anon{1}
-\def\anon{0}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
@@ -78,26 +46,22 @@ Fault Scenarios for Diagnostic Research}
 %%% authors and their email address(es). If so desired, you can specify
 %%% author contributions using the \footnote{} command.
 
-\ifnum\anon=0
-
 \author[A]{\fnms{Christoforos}~\snm{Romesis}\orcid{0009-0001-6485-5548}\thanks{Corresponding Author. Email: chris.romesis@iit.demokritos.gr}\footnote{Equal contribution.}}
 \author[A]{\fnms{Stasinos}~\snm{Konstantopoulos}\orcid{0000-0002-2586-1726}\footnotemark}
 \address[A]{Institute of Informatics and Telecommunications, NCSR Demokritos}
 
-\fi
 
-%%% Use this environment to include an abstract of your paper.
 
 \begin{abstract}
-This paper introduces a dataset for developing and evaluating machine learning algorithms 
-in gas turbine engine health monitoring. Generated using a validated Engine Performance Model 
-in MATLAB, it includes time-series data simulating realistic engine conditions and faults 
-across ten operating points and five health states: healthy, increased compressor blade clearance, 
-compressor inlet guide vane mistuning, foreign object damage, and combined faults. Each series consists
- of 3,600 time steps, representing one hour of engine operation at 1 Hz. The dataset captures the 
- dynamic development of health conditions, including scenarios with transient and persistent faults,
-  as well as complex fault interactions, offering a comprehensive resource for advancing fault diagnosis
-   and prognostics in gas turbine engines. The data is available in a compressed CSV format.
+  This dataset description paper introduces a challenging sequence
+  processing task where past events determine how subsequent data
+  should be interpreted. Specifically, the data realistically
+  simulates aircraft gas turbine engine conditions and faults, where
+  previous faults determine how the presently observed conditions
+  should be interpreted. Several state-of-the-art deep-learning
+  sequence processors have been tested on the task, and these
+  preliminary results demonstrate that they cannot correctly model the
+  phenomenon.
 \end{abstract}
 
 \end{frontmatter}
@@ -303,52 +267,27 @@ fault event, serving as an early indicator of the impending failure.
 This scenario was selected because both the TIP and VGV+FOD faults exert similar impacts on engine performance. The key differentiator between the TIP fault and the VGV+FOD fault is the long-term dependency of the latter on the initial, instantaneous VGV fault.
 
 
-\subsection{Dataset Characteristics}
 
-The dataset is available in compressed CSV format (csv.gz) at ... Table~\ref{tab:csv_lines} shows the first lines
- of the CSV file for illustration, displaying the header and the first three records of the dataset. 
- Table~\ref{tab:csv_records} describes the contents of each record.
+\section{Concluding Remarks and Next Steps}
 
-\begin{table*}[t]
-\caption{First lines of the csv file of the dataset.}
-\label{tab:csv_lines}
-\centering
-\begin{tabular}{ccccccccccc} 
-\toprule
-TSid & Timestamp & $\Delta NH$ & $\Delta Wf$ & $\Delta Pt13$ & $\Delta Tt13$ & $\Delta Pt31$ & $\Delta Tt31$ & $\Delta Tt5$ & $\Delta Pt45$ & label \\
-\midrule
-1 & 1 & -0.036845 & -0.234350 & 0.076877 & -0.033296 & 0.102473 & -0.061737 & 0.063211 & -0.099636 & 1 \\
-1 & 2 & -0.076961 & 0.163981 & 0.038031 & -0.002113 & -0.489823 & -0.264619 & -0.088901 & 0.002527 & 1 \\
-1 & 3 & 0.086086 & -0.469731 & -0.124249 & 0.034572 & -0.049747 & 0.012047 & -0.386412 & -0.085846 & 1 \\
-\bottomrule
-\end{tabular}
-\end{table*}
-
-
-\begin{table*}[h]
-\caption{Contents of the dataset’s records.}
-\label{tab:csv_records}
-\centering
-\begin{tabular}{cccl} 
-\toprule
-Header &  Type & Values & Description \\
-\midrule
-DNH & float64 & $[-1.617629, 1.391620]$ & percentage deviation of measurement: NH (high-pressure shaft speed) \\
-DWf & float64 & $[-1.502119, 9.226637]$ & percentage deviation of measurement: Wf (fuel mass flow) \\
-DPt13 & float64 & $[-0.590554, 4.295775]$ & percentage deviation of measurement: Pt13 (fan inlet total pressure) \\
-DTt13 & float64 & $[-0.484075, 1.393903]$ & percentage deviation of measurement: Tt13 (fan inlet total temperature) \\
-DPt31 & float64 & $[-1.006958, 2.094033]$ & percentage deviation of measurement: Pt31 (compressor inlet total pressure) \\
-DTt31 & float64 & $[-0.456074, 3.547797]$ & percentage deviation of measurement: Tt31 (compressor inlet total temperature) \\
-DTt5 & float64 & $[-0.832501, 7.432680]$ & percentage deviation of measurement: Tt5 (turbine outlet total temperature) \\
-DPt45 & float64 & $[-0.749605, 2.305785]$ & percentage deviation of measurement: Pt45 (interturbine total pressure) \\
-label & integer & $[1, 5]$ & health condition label \\
-
-\bottomrule
-\end{tabular}
-\end{table*}
-
-\section{Example Application}
-The dataset is currently employed to evaluate the classification capabilities of various sequential machine learning methods applied to time-series data characterized by long-term dependencies. Although this is an ongoing study, preliminary results suggest that the dataset presents a challenging use case that tests the limits of current state-of-the-art techniques. Figure~\ref{fig:results} illustrates an example of these results, where four classification methods trained on the dataset are tested on a time-series segment containing a VGV+FOD fault. The methods include an RNN, a GRU, and an LSTM, along with an MLP trained for point-to-point classification for comparison. At each time step, the actual health condition is depicted in blue, while the estimated condition is shown in red. The results indicate that all methods fail to detect the VGV+FOD fault, which occurs around time step 3200, although a sudden event—a VGV fault at approximately time step 740 that serves as a precursor to the VGV+FOD fault —is detected by all methods. Thus far, sequential methods have shown limited ability to leverage information from prior time steps, performing similarly to the point-wise MLP.  
+The dataset is currently employed to evaluate the classification
+capabilities of various sequential machine learning methods applied to
+time-series data characterized by long-term dependencies. Although
+this is an ongoing study, preliminary results suggest that the dataset
+presents a challenging use case that tests the limits of current
+state-of-the-art techniques. Figure~\ref{fig:results} illustrates an
+example of these results, where four classification methods trained on
+the dataset are tested on a time-series segment containing a VGV+FOD
+fault. The methods include an RNN, a GRU, and an LSTM, along with an
+MLP trained for point-to-point classification for comparison. At each
+time step, the actual health condition is depicted in blue, while the
+estimated condition is shown in red. The results indicate that all
+methods fail to detect the VGV+FOD fault, which occurs around time
+step 3200, although a sudden event—a VGV fault at approximately time
+step 740 that serves as a precursor to the VGV+FOD fault —is detected
+by all methods. Thus far, sequential methods have shown limited
+ability to leverage information from prior time steps, performing
+similarly to the point-wise MLP.
 
 
 \begin{figure}[h]
@@ -359,53 +298,12 @@ The dataset is currently employed to evaluate the classification capabilities of
 \end{figure}
 
 
-\section{Conclusions}
+\begin{ack}
+  MANOLO \\
+  Reserve \\
+  three lines.
+\end{ack}
 
-A novel dataset for gas turbine engine health monitoring has been generated using a validated Engine Performance Model within a MATLAB environment. This dataset encompasses a range of operating conditions and fault scenarios, providing a comprehensive resource 
-for the development and evaluation of machine learning algorithms. By including various 
-health conditions, such as increased compressor blade clearance, compressor inlet guide 
-vane mistuning, foreign object damage, and concurrent faults, the dataset enables the 
-study of complex fault interactions and the development of robust diagnostic tools. 
-The time-series data, with measurements acquired at a 1 Hz frequency, captures the 
-dynamic development of health conditions, including transient and persistent faults. 
-Its features make it especially useful for research in sequential and time-step 
-classification, as well as for analyzing long-term dependencies in data. 
-The dataset's structure and characteristics are detailed to ensure its accessibility 
-and usability for researchers and practitioners in the field.
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \section{References}
-
-% Include full bibliographic information for everything you cite, 
-% be it a book \citep{pearl2009causality}, a journal article 
-% \citep{grosz1996collaborative,rumelhart1986learning,turing1950computing}, 
-% a conference paper \citep{kautz1992planning}, or a preprint 
-% \citep{perelman2002entropy}. The citations in the previous sentence are 
-% known as \emph{parenthetical} citations, while this reference to the 
-% work of \citet{turing1950computing} is an \emph{in-text} citation.
-% The use of \BibTeX\ is highly recommended. 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%% Use this environment to include acknowledgements (optional).
-%%% This will be omitted in doubleblind mode.
-
-% \begin{ack}
-% By using the \texttt{ack} environment to insert your (optional) 
-% acknowledgements, you can ensure that the text is suppressed whenever 
-% you use the \texttt{doubleblind} option. In the final version, 
-% acknowledgements may be included on the extra page intended for references.
-% \end{ack}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%% Use this command to include your bibliography file.
-
-\bibliography{mybibfile} % Unsorted references – uses citation order
-
+\bibliography{mybibfile}
 
 \end{document}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
