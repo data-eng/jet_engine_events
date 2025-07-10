@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex JetEngineDataset"] 1752095817.85065 "JetEngineDataset.aux" "JetEngineDataset.bbl" "JetEngineDataset" 1752096552.26021 0
+["bibtex JetEngineDataset"] 1752151305.8276 "JetEngineDataset.aux" "JetEngineDataset.bbl" "JetEngineDataset" 1752151858.78901 0
   "./mybibfile.bib" 1752092271.64486 6806 fcc3b3d46861fd4e96cb6feb4102c717 ""
   "/usr/local/texlive/2024/texmf-dist/bibtex/bst/natbib/abbrvnat.bst" 1233624470 26532 66bed5cc59495faaa3f9ae9af9fa5e42 ""
-  "JetEngineDataset.aux" 1752096552.03513 2656 9e1306c528d0ff2bb4b1ff4eac3a6c16 "pdflatex"
+  "JetEngineDataset.aux" 1752151858.42304 2757 ceb32c47f4d6e040930ac41e59fd9c8b "pdflatex"
   (generated)
   "JetEngineDataset.bbl"
   "JetEngineDataset.blg"
   (rewritten before read)
-["pdflatex"] 1752096551.74283 "/home/cristo/wsl_REPOS/jet_engine_events/ecai-template/JetEngineDataset.tex" "JetEngineDataset.pdf" "JetEngineDataset" 1752096552.26036 0
-  "/home/cristo/wsl_REPOS/jet_engine_events/ecai-template/JetEngineDataset.tex" 1752096551.64221 16227 90792e6bc26db01c9708dc5bd6a87a90 ""
+["pdflatex"] 1752151857.31558 "/home/cristo/wsl_REPOS/jet_engine_events/ecai-template/JetEngineDataset.tex" "JetEngineDataset.pdf" "JetEngineDataset" 1752151858.78919 0
+  "/home/cristo/wsl_REPOS/jet_engine_events/ecai-template/JetEngineDataset.tex" 1752151857.34195 20182 fd803b09b9d34787508d7164ef770952 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm" 1136768653 4524 6bce29db5bc272ba5f332261583fee9c ""
@@ -50,10 +50,13 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/latex-fonts/lasy9.tfm" 1136768653 520 1cc7cc05f4d7bae5c23bf7516f88fa52 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb" 1248133631 32378 2b20eba6bb36c716382b6d96240eaa69 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb" 1248133631 32298 c6d25bb16d1eac01ebdc6d7084126a1e ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb" 1248133631 36094 798f80770b3b148ceedd006d487db67c ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1248133631 32734 69e00a6b65cedb993666e42eedb3d48f ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb" 1248133631 33993 9b89b85fd2d9df0482bd47194d1d3bf3 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1248133631 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb" 1248133631 32442 c975af247b6702f7ca0c299af3616b80 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb" 1136849748 44729 811d6c62865936705a31c797a1d5dada ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb" 1136849748 46026 6dab18b61c907687b520c72847215a68 ""
@@ -107,11 +110,11 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1739214863 5466570 e8651e7fa7bb054fee9a07d3f37faf28 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1739214956 3352590 a24cdcabb600ab5b8de5c3dc503761de ""
   "/usr/local/texlive/2024/texmf.cnf" 1739214858.41048 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "JetEngineDataset.aux" 1752096552.03513 2656 9e1306c528d0ff2bb4b1ff4eac3a6c16 "pdflatex"
-  "JetEngineDataset.bbl" 1752095817.94211 2774 7d1a8b41f93862fe3bb01026291c703e "bibtex JetEngineDataset"
-  "JetEngineDataset.tex" 1752096551.64221 16227 90792e6bc26db01c9708dc5bd6a87a90 ""
+  "JetEngineDataset.aux" 1752151858.42304 2757 ceb32c47f4d6e040930ac41e59fd9c8b "pdflatex"
+  "JetEngineDataset.bbl" 1752151305.96641 2774 7d1a8b41f93862fe3bb01026291c703e "bibtex JetEngineDataset"
+  "JetEngineDataset.tex" 1752151857.34195 20182 fd803b09b9d34787508d7164ef770952 ""
+  "comparison_eval_tsid_8_mod.png" 1752149403.15285 559300 f4413986f4c84c42677c5c4fbb1c68e5 ""
   "ecai.cls" 1752056582.94836 40463 591d8b744a6f408d5e805fb834823cad ""
-  "eurai.pdf" 1752056582.94836 1934 e62c6fe78edfe000836ff010f2397b29 ""
   (generated)
   "JetEngineDataset.aux"
   "JetEngineDataset.log"

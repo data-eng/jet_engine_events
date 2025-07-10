@@ -46,6 +46,9 @@
 
 \newcommand{\BibTeX}{B\kern-.05em{\sc i\kern-.025em b}\kern-.08em\TeX}
 
+% \def\anon{1}
+\def\anon{0}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
@@ -75,20 +78,26 @@ Fault Scenarios for Diagnostic Research}
 %%% authors and their email address(es). If so desired, you can specify
 %%% author contributions using the \footnote{} command.
 
+\ifnum\anon=0
+
 \author[A]{\fnms{Christoforos}~\snm{Romesis}\orcid{0009-0001-6485-5548}\thanks{Corresponding Author. Email: chris.romesis@iit.demokritos.gr}\footnote{Equal contribution.}}
 \author[A]{\fnms{Stasinos}~\snm{Konstantopoulos}\orcid{0000-0002-2586-1726}\footnotemark}
 \address[A]{Institute of Informatics and Telecommunications, NCSR Demokritos}
 
+\fi
 
 %%% Use this environment to include an abstract of your paper.
 
 \begin{abstract}
-This document outlines the formatting instructions for submissions to 
-the European Conference on Artificial Intelligence (ECAI). 
-Use the source file as a template when writing your own paper. 
-The abstract of your paper should be a short and accessible summary 
-of your contribution, preferably no longer than 200 words. 
-It should not include any references to the bibliography.
+This paper introduces a dataset for developing and evaluating machine learning algorithms 
+in gas turbine engine health monitoring. Generated using a validated Engine Performance Model 
+in MATLAB, it includes time-series data simulating realistic engine conditions and faults 
+across ten operating points and five health states: healthy, increased compressor blade clearance, 
+compressor inlet guide vane mistuning, foreign object damage, and combined faults. Each series consists
+ of 3,600 time steps, representing one hour of engine operation at 1 Hz. The dataset captures the 
+ dynamic development of health conditions, including scenarios with transient and persistent faults,
+  as well as complex fault interactions, offering a comprehensive resource for advancing fault diagnosis
+   and prognostics in gas turbine engines. The data is available in a compressed CSV format.
 \end{abstract}
 
 \end{frontmatter}
@@ -206,15 +215,16 @@ The first health condition represents the nominal, healthy operation of the engi
 parameters across any components. The second health condition (coded as TIP) models an increased clearance of the 
 compressor blades. As reported in \citep{mathioudakis_signatures_2024}, this fault results in a ratio of the 
 related health parameter deviations, $\Delta SW/\Delta SE$, of $0.2$; the actual deviations of $\Delta SW$ 
-and $\Delta SE$ are approximately $-1\%$ and $-5\%$, respectively, thereby simulating tip clearance faults of varying severity.
+and $\Delta SE$ are around $-1\%$ and $-5\%$, respectively. 
 The third health condition pertains to mistuning of the inlet guide vanes (VGV) of the compressor, 
 analogous to the TIP fault. In these instances, deviations in the compressor’s health parameters $\Delta SW$ 
-and $\Delta SE$ typically range from approximately $+3\%$ to $-1\%$, respectively, resulting in a ratio of $-3$.
+and $\Delta SE$ are typically around $+3\%$ to $-1\%$, respectively, resulting in a ratio of $-3$.
 The fourth health condition involves damage caused by foreign objects (FOD) within the compressor. 
 In such cases, deviations in both health parameters are generally around $-4\%$, yielding a ratio of $1$.
 The fifth health condition represents the concurrent occurrence of VGV and FOD faults (denoted as VGV+FOD).
-The combined effect in this scenario is additive, with deviations approximately around $+1\%$ and $-5\%$,
+The combined effect in this scenario is additive, with deviations around $+1\%$ and $-5\%$,
 respectively, leading to a ratio of $0.2$. 
+In all cases, deviations within the range of 0.7 to 1.3 times the aforementioned values are considered, simulating faults of varying severity. 
 
 Notably, the effects of TIP faults and the combined VGV+FOD faults on the compressor’s health parameters
 are the same, and therefore, measurements under these conditions follow the same distribution.
@@ -224,18 +234,23 @@ Each dataset record is labeled according to the specific health condition presen
 \caption{Considered health conditions.}
 \label{tab:health_conditions}
 \centering
-\begin{tabular}{ll@{\hspace{8mm}}ll} 
+\begin{tabular}{ccccc} 
 \toprule
-AISB-1980 & Amsterdam & ECAI-1990 & Stockholm \\
-ECAI-2000 & Berlin & ECAI-2010 & Lisbon \\
-ECAI-2020 & \multicolumn{3}{l}{Santiago de Compostela (online)} \\
+label &  health condition & $\Delta SE$ & $\Delta SE$ & $\Delta SW/\Delta SE$ \\
+\midrule
+1	& Healthy	& 0\%	& 0\%	& N/A \\
+2	& TIP fault	& -1\%	& -5\%	& 0.2 \\
+3	& VGV fault	& +3\%	& -1\%	& -3 \\
+4	& FOD fault	& -4\%	& -4\%	& 1 \\
+5	& VGV+FOD faults	& -1\%	& -5\%	& 0.2 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
+
 Each time series comprises 3{,}600 time steps, representing measurements acquired from the engine
 at a frequency of 1~Hz during one hour of flight at a specific operating point. During this period,
-various health conditions may develop, as illustrated in Figure~\ref{fig:health_conditions}.
+various health conditions may develop.
 
 A time series without any fault contains measurements indicative of healthy engine operation
 at all time steps (labeled $1$). In some time series, the engine operates fault-free initially
@@ -253,48 +268,76 @@ subsequently ingested by the engine. The failure of the VGV mechanism may be pre
 fault event, serving as an early indicator of the impending failure.
 This scenario was selected because both the TIP and VGV+FOD faults exert similar impacts on engine performance. The key differentiator between the TIP fault and the VGV+FOD fault is the long-term dependency of the latter on the initial, instantaneous VGV fault.
 
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=2.5cm]{eurai}
-  \caption{Development of health conditions during a time-series of the dataset.}
-  \label{fig:health_conditions}
-\end{figure}
 
 \subsection{Dataset Characteristics}
 
-The dataset is available in compressed CSV format (csv.gz) at ... Figure~\ref{fig:csv} shows the first lines
+The dataset is available in compressed CSV format (csv.gz) at ... Table~\ref{tab:csv_lines} shows the first lines
  of the CSV file for illustration, displaying the header and the first three records of the dataset. 
  Table~\ref{tab:csv_records} describes the contents of each record.
 
+\begin{table*}[t]
+\caption{First lines of the csv file of the dataset.}
+\label{tab:csv_lines}
+\centering
+\begin{tabular}{ccccccccccc} 
+\toprule
+TSid & Timestamp & $\Delta NH$ & $\Delta Wf$ & $\Delta Pt13$ & $\Delta Tt13$ & $\Delta Pt31$ & $\Delta Tt31$ & $\Delta Tt5$ & $\Delta Pt45$ & label \\
+\midrule
+1 & 1 & -0.036845 & -0.234350 & 0.076877 & -0.033296 & 0.102473 & -0.061737 & 0.063211 & -0.099636 & 1 \\
+1 & 2 & -0.076961 & 0.163981 & 0.038031 & -0.002113 & -0.489823 & -0.264619 & -0.088901 & 0.002527 & 1 \\
+1 & 3 & 0.086086 & -0.469731 & -0.124249 & 0.034572 & -0.049747 & 0.012047 & -0.386412 & -0.085846 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+
+\begin{table*}[h]
+\caption{Contents of the dataset’s records.}
+\label{tab:csv_records}
+\centering
+\begin{tabular}{cccl} 
+\toprule
+Header &  Type & Values & Description \\
+\midrule
+DNH & float64 & $[-1.617629, 1.391620]$ & percentage deviation of measurement: NH (high-pressure shaft speed) \\
+DWf & float64 & $[-1.502119, 9.226637]$ & percentage deviation of measurement: Wf (fuel mass flow) \\
+DPt13 & float64 & $[-0.590554, 4.295775]$ & percentage deviation of measurement: Pt13 (fan inlet total pressure) \\
+DTt13 & float64 & $[-0.484075, 1.393903]$ & percentage deviation of measurement: Tt13 (fan inlet total temperature) \\
+DPt31 & float64 & $[-1.006958, 2.094033]$ & percentage deviation of measurement: Pt31 (compressor inlet total pressure) \\
+DTt31 & float64 & $[-0.456074, 3.547797]$ & percentage deviation of measurement: Tt31 (compressor inlet total temperature) \\
+DTt5 & float64 & $[-0.832501, 7.432680]$ & percentage deviation of measurement: Tt5 (turbine outlet total temperature) \\
+DPt45 & float64 & $[-0.749605, 2.305785]$ & percentage deviation of measurement: Pt45 (interturbine total pressure) \\
+label & integer & $[1, 5]$ & health condition label \\
+
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\section{Example Application}
+The dataset is currently employed to evaluate the classification capabilities of various sequential machine learning methods applied to time-series data characterized by long-term dependencies. Although this is an ongoing study, preliminary results suggest that the dataset presents a challenging use case that tests the limits of current state-of-the-art techniques. Figure~\ref{fig:results} illustrates an example of these results, where four classification methods trained on the dataset are tested on a time-series segment containing a VGV+FOD fault. The methods include an RNN, a GRU, and an LSTM, along with an MLP trained for point-to-point classification for comparison. At each time step, the actual health condition is depicted in blue, while the estimated condition is shown in red. The results indicate that all methods fail to detect the VGV+FOD fault, which occurs around time step 3200, although a sudden event—a VGV fault at approximately time step 740 that serves as a precursor to the VGV+FOD fault —is detected by all methods. Thus far, sequential methods have shown limited ability to leverage information from prior time steps, performing similarly to the point-wise MLP.  
 
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=2.5cm]{eurai}
-  \caption{First lines of the csv file of the dataset.}
-  \label{fig:csv}
+  \includegraphics[width=8.5cm]{comparison_eval_tsid_8_mod}
+  \caption{Development of health conditions during a time-series of the dataset.}
+  \label{fig:results}
 \end{figure}
-
-\begin{table}[h]
-\caption{Contents of the dataset’s records.}
-\label{tab:csv_records}
-\centering
-\begin{tabular}{ll@{\hspace{8mm}}ll} 
-\toprule
-AISB-1980 & Amsterdam & ECAI-1990 & Stockholm \\
-ECAI-2000 & Berlin & ECAI-2010 & Lisbon \\
-ECAI-2020 & \multicolumn{3}{l}{Santiago de Compostela (online)} \\
-\bottomrule
-\end{tabular}
-\end{table}
 
 
 \section{Conclusions}
 
-his scenario exemplifies a specific fault condition characterized by a severe VGV fault leading to FOD.
-The damage is attributed to the detachment of a particle from the VGV mechanism, such as a loosened bolt, which is
-subsequently ingested by the engine. The failure of the VGV mechanism may be preceded by a transient VGV
-fault event, serving as an early indicator of the impending failure.
+A novel dataset for gas turbine engine health monitoring has been generated using a validated Engine Performance Model within a MATLAB environment. This dataset encompasses a range of operating conditions and fault scenarios, providing a comprehensive resource 
+for the development and evaluation of machine learning algorithms. By including various 
+health conditions, such as increased compressor blade clearance, compressor inlet guide 
+vane mistuning, foreign object damage, and concurrent faults, the dataset enables the 
+study of complex fault interactions and the development of robust diagnostic tools. 
+The time-series data, with measurements acquired at a 1 Hz frequency, captures the 
+dynamic development of health conditions, including transient and persistent faults. 
+Its features make it especially useful for research in sequential and time-step 
+classification, as well as for analyzing long-term dependencies in data. 
+The dataset's structure and characteristics are detailed to ensure its accessibility 
+and usability for researchers and practitioners in the field.
 
 
 
@@ -326,9 +369,6 @@ fault event, serving as an early indicator of the impending failure.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% Use this command to include your bibliography file.
-
-
-
 
 \bibliography{mybibfile} % Unsorted references – uses citation order
 
