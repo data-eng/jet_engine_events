@@ -104,7 +104,41 @@ compressor inlet guide vane mistuning, foreign object damage, and combined fault
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Introduction}
+\section{Motivation and Purpose}
+
+Time series forecasting and time series classification are the major
+\emph{sequence processing} tasks, and both depend on a method's
+ability to identify time-based patterns in the data. When dealing
+with \emph{long sequence} processing in particular, successful methods
+must identify non-local patterns such as trends, seasonality, and
+long-range dependencies. Observing large-scale and high-impact
+repositories such as the 
+\emph{Monash Time Series Forecasting Archive} \citep{godahewa-etal-2021}
+reveals an abundance of datasets that exhibit long-term trends and
+long-period seasonal patterns, but a lack of datasets that exhibit
+non-periodic long-range dependencies. Unsurprizingly, successful
+methods stem from the non-parametric statistics field or from the deep
+learning field.
+
+The sequential integration of sub-symbolic and symbolic modules allows
+connectionist recognition of single events to interact with long-range
+dependencies between events. Such \emph{neuro-symbolic} approaches are
+powerful, but to demonstrate their effectiveness they must be applied
+to datasets and tasks where the following conditions hold simultaneously:
+(a) the recognition of individual events in the raw data is a
+non-trivial pattern recognition task for which connectionist methods
+are more appropriate; and (b) this recognition is affected by unknown
+symbolic patterns that need to be discovered in conjunction with the
+sub-symbolic patterns themselves.
+
+In this dataset description paper we present such a task where purely
+connectionist sequence processing performs substantially below the par
+established through the usual trend and seasonality tasks and where
+neuro-symbolic methods can demonstrate their effectiveness in
+challenging real-world applications.
+
+
+\section{Dataset Description}
 
 Jet engines play a vital role in modern aviation, 
 making the assurance of their operational safety and reliability a top priority.
@@ -127,7 +161,6 @@ mistuning, and foreign object damage (FOD)—occur. This dataset aims to
 facilitate the development and evaluation of fault detection strategies 
 in aviation engine condition monitoring.
 
-\section{Motivation and Purpose}
 This dataset presents a valuable resource for the Machine Learning community
 due to its embodiment of a complex engineering problem, characterized by 
 several distinctive features. It comprises 2,410 time series, each with 
@@ -143,14 +176,15 @@ classification, as well as for investigating long-term dependencies within
 time-series data.
 
 
-\section{Dataset Description}
 The dataset comprises a time series of measurements collected from a 
 low bypass ratio turbofan engine, which is representative of 
 contemporary in-service civil aviation engines. The dataset was 
 generated using an Engine Performance Model (EPM) that simulates the 
 engine's operational behavior.
 
+
 \subsection{Dataset Description}
+
 An EPM interrelates parameters that represent engine component health and operating
 conditions with measurements performed on an engine \citep{alexiou_development_2005},
 and can be expressed through Equation~(\ref{eq:epm}):
