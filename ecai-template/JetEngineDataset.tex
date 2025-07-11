@@ -1,8 +1,8 @@
 %%% Use the first variant for the camera-ready paper.
 %%% Use the second variant for submission (for double-blind reviewing).
 
-\documentclass{ecai} 
-%\documentclass[doubleblind]{ecai} 
+%\documentclass{ecai} 
+\documentclass[doubleblind]{ecai} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -143,24 +143,25 @@ Jet engines play a vital role in aviation, and ensuring their safety and reliabi
 % generated using an Engine Performance Model (EPM) that simulates the 
 % engine's operational behavior.
 
-The dataset is available in: https://doi.org/10.5281/zenodo.15856441
+The dataset has been archived and is publicly accessible from \url{https://doi.org/10.5281/zenodo.15856441}
+(currently anonymized, metadata to be added after the review).
 
 
-\subsection{Engine PErformance Model}
+\subsection{Engine Performance Model}
 
 An EPM interrelates parameters that represent engine component health and operating conditions with measurements performed on an engine \citep{alexiou_development_2005}, and can be expressed through Equation~(\ref{eq:epm}):
 
 \begin{eqnarray}\label{eq:epm}
 \mathbf{Y} = \mathbf{g}(\mathbf{u}, \mathbf{f})
 \end{eqnarray}
-
+%
 where $\mathbf{g}$ is a vector function representing the EPM, $\mathbf{u}$ is a vector of measured 
 quantities defining the engine's operating point, $\mathbf{Y}$ is a set of measurements for condition monitoring, and $\mathbf{f}$ is a vector of engine component \textit{health parameters}. Typically, two health parameters are used for each component: the flow factor (SW), indicating the component's swallowing capacity,and the efficiency factor (SE), representing thermal efficiency. The application of such parameters for assessing engine component health has been discussed in \citep{mathioudakis_performance_2001}. A deviation of a health parameter from its nominal value signals a fault in that component. As extensively discussed in \citep{mathioudakis_signatures_2024} the ratio of deviations between two health parameters can serve as a characteristic metric for faults such as fouling, increased tip clearance, erosion, and foreign object damage. The severity of the fault correlates with the level of this deviation. The deviation (or \textit{delta}) of a health parameter $\mathbf{\Delta f}$ is defined as:
 
 \begin{eqnarray}\label{eq:deltaf}
     \mathbf{\Delta f}\ (\%) = \frac{\mathbf{f} - \mathbf{f_o}}{\mathbf{f_o}} \cdot 100\%
 \end{eqnarray}
-
+%
 where $\mathbf{f}$ denotes the value of the health parameter, and $\mathbf{f_o}$ its nominal value.
 
 Using the EPM, the nominal values of the available measurement set, denoted as $\mathbf{Y_o}$, 
@@ -170,11 +171,11 @@ can be computed for a specified operating point $\mathbf{u}$. These values corre
 \mathbf{Y_o} = \mathbf{g}(\mathbf{u}, \mathbf{f_o})
 \end{eqnarray}
 
-Once a measurement vector $\mathbf{Y}$ is obtained from the engine, the percentage deviation (\textit{delta})
+Once a measurement vector $\mathbf{Y}$ is obtained from the engine, the relative deviation $\mathbf{\Delta Y(\%)}$
 from its nominal value $\mathbf{Y_o}$ is defined as:
 
 \begin{eqnarray}\label{eq:deltay}
-    \mathbf{\Delta Y}\ (\%) = \frac{\mathbf{Y} - \mathbf{Y_o}}{\mathbf{Y_o}} \cdot 100\%
+    \mathbf{\Delta Y}(\%) = \frac{\mathbf{Y} - \mathbf{Y_o}}{\mathbf{Y_o}} \cdot 100\%
 \end{eqnarray}
 
 To emulate realistic measurement conditions, random noise is superimposed on the measurement 
