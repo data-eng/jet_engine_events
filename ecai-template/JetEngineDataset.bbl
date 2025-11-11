@@ -7,47 +7,36 @@
 
 \bibitem[Alexiou and Mathioudakis(2005)]{alexiou_development_2005}
 A.~Alexiou and K.~Mathioudakis.
-\newblock Development of {Gas} {Turbine} {Performance} {Models} {Using} a
-  {Generic} {Simulation} {Tool}.
-\newblock In \emph{Volume 1: {Turbo} {Expo} 2005}, Reno, Nevada, USA, Jan.
-  2005. ASMEDC.
+\newblock Development of {Gas} {Turbine} {Performance} {Models} {Using} a {Generic} {Simulation} {Tool}.
+\newblock In \emph{Volume 1: {Turbo} {Expo} 2005}, Reno, Nevada, USA, Jan. 2005. ASMEDC.
 \newblock \doi{10.1115/gt2005-68678}.
 
-\bibitem[Godahewa et~al.(2021)Godahewa, Bergmeir, Webb, Hyndman, and
-  Montero-Manso]{godahewa-etal-2021}
+\bibitem[Godahewa et~al.(2021)Godahewa, Bergmeir, Webb, Hyndman, and Montero-Manso]{godahewa-etal-2021}
 R.~W. Godahewa, C.~Bergmeir, G.~I. Webb, R.~Hyndman, and P.~Montero-Manso.
 \newblock Monash time series forecasting archive.
-\newblock In \emph{Thirty-fifth Conference on {N}eural {I}nformation
-  {P}rocessing {S}ystems Datasets and Benchmarks Track (Round 2)}, 2021.
+\newblock In \emph{Thirty-fifth Conference on {N}eural {I}nformation {P}rocessing {S}ystems Datasets and Benchmarks Track (Round 2)}, 2021.
 \newblock URL \url{https://openreview.net/forum?id=wEc1mgAjU-}.
 
-\bibitem[Mathioudakis et~al.(2001)Mathioudakis, Stamatis, Tsalavoutas, and
-  Aretakis]{mathioudakis_performance_2001}
+\bibitem[Mathioudakis et~al.(2001)Mathioudakis, Stamatis, Tsalavoutas, and Aretakis]{mathioudakis_performance_2001}
 K.~Mathioudakis, A.~Stamatis, A.~Tsalavoutas, and N.~Aretakis.
-\newblock Performance analysis of industrial gas turbines for engine condition
-  monitoring.
-\newblock \emph{Proceedings of the Institution of Mechanical Engineers, Part A:
-  Journal of Power and Energy}, 215\penalty0 (2):\penalty0 173--184, Jan. 2001.
+\newblock Performance analysis of industrial gas turbines for engine condition monitoring.
+\newblock \emph{Proceedings of the Institution of Mechanical Engineers, Part A: Journal of Power and Energy}, 215\penalty0 (2):\penalty0 173--184, Jan. 2001.
 \newblock ISSN 0957-6509, 2041-2967.
 \newblock \doi{10.1243/0957650011538442}.
 \newblock Publisher: SAGE Publications.
 
-\bibitem[Mathioudakis et~al.(2024)Mathioudakis, Alexiou, Aretakis, and
-  Romesis]{mathioudakis_signatures_2024}
+\bibitem[Mathioudakis et~al.(2024)Mathioudakis, Alexiou, Aretakis, and Romesis]{mathioudakis_signatures_2024}
 K.~Mathioudakis, A.~Alexiou, N.~Aretakis, and C.~Romesis.
-\newblock Signatures of {Compressor} and {Turbine} {Faults} in {Gas} {Turbine}
-  {Performance} {Diagnostics}: {A} {Review}.
+\newblock Signatures of {Compressor} and {Turbine} {Faults} in {Gas} {Turbine} {Performance} {Diagnostics}: {A} {Review}.
 \newblock \emph{Energies}, 17\penalty0 (14):\penalty0 3409, July 2024.
 \newblock ISSN 1996-1073.
 \newblock \doi{10.3390/en17143409}.
 \newblock URL \url{https://www.mdpi.com/1996-1073/17/14/3409}.
 \newblock Publisher: MDPI AG.
 
-\bibitem[Romesis et~al.(2024)Romesis, Aretakis, and
-  Mathioudakis]{romesis_model-assisted_2024}
+\bibitem[Romesis et~al.(2024)Romesis, Aretakis, and Mathioudakis]{romesis_model-assisted_2024}
 C.~Romesis, N.~Aretakis, and K.~Mathioudakis.
-\newblock Model-{Assisted} {Probabilistic} {Neural} {Networks} for {Effective}
-  {Turbofan} {Fault} {Diagnosis}.
+\newblock Model-{Assisted} {Probabilistic} {Neural} {Networks} for {Effective} {Turbofan} {Fault} {Diagnosis}.
 \newblock \emph{Aerospace}, 11\penalty0 (11):\penalty0 913, Nov. 2024.
 \newblock ISSN 2226-4310.
 \newblock \doi{10.3390/aerospace11110913}.

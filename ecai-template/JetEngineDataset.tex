@@ -1,8 +1,8 @@
 %%% Use the first variant for the camera-ready paper.
 %%% Use the second variant for submission (for double-blind reviewing).
 
-%\documentclass{ecai} 
-\documentclass[doubleblind]{ecai} 
+\documentclass{ecai} 
+% \documentclass[doubleblind]{ecai} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -28,7 +28,7 @@
 %%% Use this command to specify your submission number.
 %%% In doubleblind mode, it will be printed on the first page.
 
-\paperid{123} 
+\paperid{13} 
 
 %%% Use this command to specify the title of your paper.
 
@@ -144,7 +144,7 @@ Jet engines play a vital role in aviation, and ensuring their safety and reliabi
 % engine's operational behavior.
 
 The dataset has been archived and is publicly accessible from \url{https://doi.org/10.5281/zenodo.15856441}
-(currently anonymized, metadata to be added after the review).
+% (currently anonymized, metadata to be added after the review).
 
 
 \subsection{Engine Performance Model}
@@ -199,6 +199,7 @@ The EPM used for dataset generation was developed in MATLAB. At each time step, 
 % Notably, the effects of TIP faults and the combined VGV+FOD faults on the compressor’s health parameters are the same, and therefore, measurements under these conditions follow the same distribution. Each dataset record is labeled according to the specific health condition present at that time step.
 
 \begin{table}[h]
+% \begin{table}
 \caption{Considered health conditions.}
 \label{tab:health_conditions}
 \centering
@@ -258,9 +259,7 @@ The dataset is used to evaluate the classification capabilities of sequential ma
 
 
 \begin{ack}
-  MANOLO \\
-  Reserve \\
-  three lines.
+  This research was co-funded by the European Union under GA no. 101135782 (MANOLO project). Views and opinions expressed are however those of the authors only and do not necessarily reflect those of the European Union or CNECT. Neither the European Union nor CNECT can be held responsible for them.
 \end{ack}
 
 \bibliography{mybibfile}

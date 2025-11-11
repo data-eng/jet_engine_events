@@ -1,0 +1,40 @@
+\begin{thebibliography}{5}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Inproceedings
+\bibitem[{Godahewa et~al.(2021)Godahewa, Bergmeir, Webb, Hyndman, and Montero-Manso}]{godahewa-etal-2021}
+\bibinfo{author}{R.~W. Godahewa}, \bibinfo{author}{C.~Bergmeir}, \bibinfo{author}{G.~I. Webb}, \bibinfo{author}{R.~Hyndman}, \bibinfo{author}{P.~Montero-Manso},
+\newblock \bibinfo{title}{Monash time series forecasting archive},
+\newblock in: \bibinfo{booktitle}{Thirty-fifth Conference on {N}eural {I}nformation {P}rocessing {S}ystems Datasets and Benchmarks Track (Round 2)}, \bibinfo{year}{2021}. \URLprefix \url{https://openreview.net/forum?id=wEc1mgAjU-}.
+%Type = Inproceedings
+\bibitem[{Alexiou and Mathioudakis(2005)}]{alexiou_development_2005}
+\bibinfo{author}{A.~Alexiou}, \bibinfo{author}{K.~Mathioudakis},
+\newblock \bibinfo{title}{Development of {Gas} {Turbine} {Performance} {Models} {Using} a {Generic} {Simulation} {Tool}},
+\newblock in: \bibinfo{booktitle}{Volume 1: {Turbo} {Expo} 2005}, \bibinfo{publisher}{ASMEDC}, \bibinfo{address}{Reno, Nevada, USA}, \bibinfo{year}{2005}. \DOIprefix\doi{10.1115/gt2005-68678}.
+%Type = Article
+\bibitem[{Mathioudakis et~al.(2001)Mathioudakis, Stamatis, Tsalavoutas, and Aretakis}]{mathioudakis_performance_2001}
+\bibinfo{author}{K.~Mathioudakis}, \bibinfo{author}{A.~Stamatis}, \bibinfo{author}{A.~Tsalavoutas}, \bibinfo{author}{N.~Aretakis},
+\newblock \bibinfo{title}{Performance analysis of industrial gas turbines for engine condition monitoring},
+\newblock \bibinfo{journal}{Proceedings of the Institution of Mechanical Engineers, Part A: Journal of Power and Energy} \bibinfo{volume}{215} (\bibinfo{year}{2001}) \bibinfo{pages}{173--184}. \DOIprefix\doi{10.1243/0957650011538442}, \bibinfo{note}{publisher: SAGE Publications}.
+%Type = Article
+\bibitem[{Mathioudakis et~al.(2024)Mathioudakis, Alexiou, Aretakis, and Romesis}]{mathioudakis_signatures_2024}
+\bibinfo{author}{K.~Mathioudakis}, \bibinfo{author}{A.~Alexiou}, \bibinfo{author}{N.~Aretakis}, \bibinfo{author}{C.~Romesis},
+\newblock \bibinfo{title}{Signatures of {Compressor} and {Turbine} {Faults} in {Gas} {Turbine} {Performance} {Diagnostics}: {A} {Review}},
+\newblock \bibinfo{journal}{Energies} \bibinfo{volume}{17} (\bibinfo{year}{2024}) \bibinfo{pages}{3409}. \DOIprefix\doi{10.3390/en17143409}, \bibinfo{note}{publisher: MDPI AG}.
+%Type = Article
+\bibitem[{Romesis et~al.(2024)Romesis, Aretakis, and Mathioudakis}]{romesis_model-assisted_2024}
+\bibinfo{author}{C.~Romesis}, \bibinfo{author}{N.~Aretakis}, \bibinfo{author}{K.~Mathioudakis},
+\newblock \bibinfo{title}{Model-{Assisted} {Probabilistic} {Neural} {Networks} for {Effective} {Turbofan} {Fault} {Diagnosis}},
+\newblock \bibinfo{journal}{Aerospace} \bibinfo{volume}{11} (\bibinfo{year}{2024}) \bibinfo{pages}{913}. \DOIprefix\doi{10.3390/aerospace11110913}, \bibinfo{note}{publisher: MDPI AG}.
+
+\end{thebibliography}

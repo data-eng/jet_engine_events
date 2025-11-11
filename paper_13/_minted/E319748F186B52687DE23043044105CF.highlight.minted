@@ -1,0 +1,13 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZbs{}author}\PYG{n+na}{[1,2]}\PYG{n+nb}{\PYGZob{}}Author Name\PYG{n+nb}{\PYGZcb{}}[\PYG{c}{\PYGZpc{}}
+    prefix=Prof.,
+    degree=D.Sc.,
+    role=Researcher,
+    orcid=0000\PYGZhy{}0000\PYGZhy{}000\PYGZhy{}0000,
+    email=name@example.com,
+    url=https://name.example.com
+]
+
+\PYG{k}{\PYGZbs{}address}\PYG{n+na}{[1]}\PYG{n+nb}{\PYGZob{}}Affiliation \PYGZsh{}1\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}address}\PYG{n+na}{[2]}\PYG{n+nb}{\PYGZob{}}Affiliation \PYGZsh{}2\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}

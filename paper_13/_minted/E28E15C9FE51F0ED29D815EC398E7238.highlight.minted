@@ -1,0 +1,5 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}abstract\PYG{n+nb}{\PYGZcb{}}
+  This is an abstract.
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}abstract\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}

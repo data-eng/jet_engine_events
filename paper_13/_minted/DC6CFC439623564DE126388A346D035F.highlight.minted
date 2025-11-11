@@ -1,0 +1,4 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{n+nb}{cd}\PYG{+w}{ }/tmp/
+\PYG{+w}{    }wget\PYG{+w}{ }https://mirror.ctan.org/systems/texlive/tlnet/install\PYGZhy{}tl\PYGZhy{}unx.tar.gz
+\end{MintedVerbatim}

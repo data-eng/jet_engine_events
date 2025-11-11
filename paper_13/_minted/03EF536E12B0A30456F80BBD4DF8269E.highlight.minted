@@ -1,0 +1,8 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}keywords\PYG{n+nb}{\PYGZcb{}}
+  First keyword \PYG{k}{\PYGZbs{}sep}
+  Second keyword \PYG{k}{\PYGZbs{}sep}
+  Third keyword \PYG{k}{\PYGZbs{}sep}
+  Fourth keyword
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}keywords\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}

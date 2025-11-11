@@ -1,0 +1,5 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}acknowledgments\PYG{n+nb}{\PYGZcb{}}
+These are different acknowledgments.
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}acknowledgments\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}

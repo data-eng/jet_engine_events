@@ -1,0 +1,7 @@
+This dataset description paper introduces a challenging sequence
+  processing task. Specifically, the task is to recognize faults from
+  aircraft gas turbine engine conditions where previous faults
+  determine how the presently observed conditions should be
+  interpreted. Several state-of-the-art deep-learning sequence
+  processors have been tested on the task, and these preliminary
+  results demonstrate that they cannot correctly model the phenomenon.

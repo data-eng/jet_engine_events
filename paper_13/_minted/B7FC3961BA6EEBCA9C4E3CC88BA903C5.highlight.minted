@@ -1,0 +1,6 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZbs{}title}\PYG{n+nb}{\PYGZob{}}A better way to format your document for CEUR\PYGZhy{}WS\PYG{n+nb}{\PYGZcb{}}
+
+\PYG{k}{\PYGZbs{}tnotemark}\PYG{n+na}{[1]}
+\PYG{k}{\PYGZbs{}tnotetext}\PYG{n+na}{[1]}\PYG{n+nb}{\PYGZob{}}You can use this document as the template for preparing your publication. We recommend using the latest version of the ceurart style.\PYG{n+nb}{\PYGZcb{}}
+\end{MintedVerbatim}
